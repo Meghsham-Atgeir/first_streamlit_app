@@ -22,14 +22,12 @@ selected_fruits = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[selected_fruits]  # Use the correct variable name
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
-
-# Normalizing the data from Json fromat 
-fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-# Displaying data in dataframes
-streamlit.dataframe(fruityvice_normalized)
-
 streamlit.header("Fruityvice Fruit Advice!")
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruityvice_response.json())
 
+# Normalizing the data from Json fromat 
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+# Displaying data in dataframes
+streamlit.dataframe(fruityvice_normalized)
