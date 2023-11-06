@@ -24,7 +24,7 @@ fruits_to_show = my_fruit_list.loc[selected_fruits]  # Use the correct variable 
 streamlit.dataframe(fruits_to_show)
 
 # Normalizing the data from Json fromat 
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # Displaying data in dataframes
 streamlit.dataframe(fruityvice_normalized)
 
